@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        integrity="sha512-P5mCn/lfy2+JIX4ebVqGfi0/6syBF5IqEXYlrHBD/rRi8i/H/FfPU+D/EbGCQ7iLunbq8nlMGG6P9iGN5/6J4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="font-myfont">
+    <nav class="container mx-auto p-6">
+        <div class="flex justify-between">
+            <!--  -->
+            <div class="py-2">
+                <img src="img/logo.svg" alt="">
+            </div>
+            <!--  -->
+            <div class="lg:flex space-x-8 hidden">
+
+                <div class="flex items-center">
+                    <input type="text" placeholder="Search..."
+                        class="border w-96 p-2 rounded-l focus:outline-none focus:border-blue-500">
+                    <button class="bg-blue-500 text-white p-2.5 rounded-r">Search</button>
+                </div>
+
+
+
+                <!--  -->
+
+                <div class="text-center">
+                    <a class="flex justify-center" href="#"><img class="size-9" src="iconss/favorite.svg" alt=""></a>
+                    <div class="text-sm">White lsit</div>
+                </div>
+
+                <div class="text-center">
+                    <a class="flex justify-center" href="#"><img class="size-9" src="iconss/add_shopping_cart.svg" alt=""></a>
+                    <div class="text-sm">Cart</div>
+                </div>
+                <!--  -->
+
+            </div>
+
+            <div class="size-9 block lg:hidden">
+                <a href="#"><img src="menu.svg" alt=""></a>
+            </div>
+
+        </div>
+    </nav>
+    <nav class="bg-gray-800 p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-center">
+            <a href="#" class="text-white mr-6">Home</a>
+            <a href="#" class="text-white mr-6">All Categories</a>
+            <a href="#" class="text-white mr-6">Flash Sale</a>
+            <a href="#" class="text-white">Track Order</a>
+        </div>
+    </nav>
+
+    <!-- section 1 -->
+    <section class="relative p-10">
+        <div class="container mx-auto  p-8 overflow-hidden rounded-md">
+            <div class="flex justify-between py-4">
+                <!--  -->
+                <h1 class="text-3xl font-bold">Best Selling</h1>
+                <div class="text-center">
+                    <a href="/view-all"
+                        class="bg-gray-800 text-white py-2 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-">View
+                        All</a>
+                </div>
+
+            </div>
+            <!-- <div class=""> -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Product Box 1 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Box 2 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 3 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 4 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Box 5 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 6 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 7 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 8 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag2.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- section 2 -->
+    <section class="relative p-10">
+        <div class="container mx-auto  p-8 overflow-hidden rounded-md">
+            <div class="flex justify-between py-4">
+                <!--  -->
+                <h1 class="text-3xl font-bold">Best Selling</h1>
+                <div class="text-center">
+                    <a href="/view-all"
+                        class="bg-gray-800 text-white py-2 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-">View
+                        All</a>
+                </div>
+
+            </div>
+            <!-- <div class=""> -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Product Box 1 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Box 2 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 3 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 4 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Box 5 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 6 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 7 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 8 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Navigation -->
+                <div>
+                    <div class="swiper-button-next "></div>
+                    <div class="swiper-button-prev "></div>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- section 3 -->
+    <section class="relative p-10">
+        <div class="container mx-auto  p-8 overflow-hidden rounded-md">
+            <div class="flex justify-between py-4">
+                <!--  -->
+                <h1 class="text-3xl font-bold">Best Selling</h1>
+                <div class="text-center">
+                    <a href="/view-all"
+                        class="bg-gray-800 text-white py-2 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-">View
+                        All</a>
+                </div>
+
+            </div>
+            <!-- <div class=""> -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Product Box 1 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Box 2 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 3 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 4 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Box 5 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 6 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 7 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 8 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Navigation -->
+                <div>
+                    <div class="swiper-button-next "></div>
+                    <div class="swiper-button-prev "></div>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- section 4 -->
+    <section class="relative p-10">
+        <div class="container mx-auto  p-8 overflow-hidden rounded-md">
+            <div class="flex justify-between py-4">
+                <!--  -->
+                <h1 class="text-3xl font-bold">Best Selling</h1>
+                <div class="text-center">
+                    <a href="/view-all"
+                        class="bg-gray-800 text-white py-2 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-">View
+                        All</a>
+                </div>
+
+            </div>
+            <!-- <div class=""> -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Product Box 1 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Box 2 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 3 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 4 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Box 5 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 6 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 7 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 8 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Navigation -->
+                <div>
+                    <div class="swiper-button-next "></div>
+                    <div class="swiper-button-prev "></div>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+    </section>
+
+
+    <!-- section 5 -->
+    <section class="relative p-10">
+        <div class="container mx-auto  p-8 overflow-hidden rounded-md">
+            <div class="flex justify-between py-4">
+                <!--  -->
+                <h1 class="text-3xl font-bold">Best Selling</h1>
+                <div class="text-center">
+                    <a href="/view-all"
+                        class="bg-gray-800 text-white py-2 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-">View
+                        All</a>
+                </div>
+
+            </div>
+            <!-- <div class=""> -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Product Box 1 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Box 2 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 3 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 4 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Box 5 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 6 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 7 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 8 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Navigation -->
+                <div>
+                    <div class="swiper-button-next "></div>
+                    <div class="swiper-button-prev "></div>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- section 6 -->
+    <section class="relative p-10">
+        <div class="container mx-auto  p-8 overflow-hidden rounded-md">
+            <div class="flex justify-between py-4">
+                <!--  -->
+                <h1 class="text-3xl font-bold">Best Selling</h1>
+                <div class="text-center">
+                    <a href="/view-all"
+                        class="bg-gray-800 text-white py-2 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-">View
+                        All</a>
+                </div>
+
+            </div>
+            <!-- <div class=""> -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Product Box 1 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Product Box 2 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 3 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 4 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product Box 5 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 6 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 7 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Box 8 -->
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="img/bag1.png" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">Product 1</h3>
+                            <p class="text-gray-600 mb-2">$19.99</p>
+                            <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="iconss/favorite.svg" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Navigation -->
+                <div>
+                    <div class="swiper-button-next "></div>
+                    <div class="swiper-button-prev "></div>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+    </section>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+
+
+
+
+</body>
+
+</html>
