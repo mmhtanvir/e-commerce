@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        integrity="sha512-P5mCn/lfy2+JIX4ebVqGfi0/6syBF5IqEXYlrHBD/rRi8i/H/FfPU+D/EbGCQ7iLunbq8nlMGG6P9iGN5/6J4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="font-myfont">
+    <div class="py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white font-bold text-lg">Your Logo</div>
+
+            <div class="flex space-x-4 items-center">
+                <a href="sign_up.html">
+                    <button class="font-bold py-2 px-4">
+                        Sign Up
+                    </button>
+                </a>
+                <a href="login.html">
+                    <button class="font-bold py-2 px-4">
+                        Login
+                    </button>
+                </a>
+                <div class="text-white">
+                    <img src="iconss/user.svg" class="size-6" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container mx-auto p-6">
+        <div class="flex justify-between">
+            <!--  -->
+            <div class="py-2">
+                <img src="img/logo.svg" alt="">
+            </div>
+            <!--  -->
+            <div class="lg:flex space-x-8 hidden">
+
+                <div class="flex items-center">
+                    <input type="text" placeholder="Search..."
+                        class="border w-96 p-2 rounded-l focus:outline-none focus:border-blue-500">
+                    <button class="bg-blue-500 text-white p-2.5 rounded-r">Search</button>
+                </div>
+
+
+
+                <!--  -->
+
+                <div class="text-center relative">
+                    <a class="flex justify-center" href="#">
+                        <img class="size-9" src="iconss/favorite.svg" alt="">
+                        <span class="absolute top-0 right-0 bg-red-500 text-white px-1 rounded-full text-[9px]">7</span>
+                    </a>
+                    <div class="text-sm">White list</div>
+                </div>
+
+                <div class="text-center relative">
+                    <a class="flex justify-center" href="#">
+                        <img class="size-9" src="iconss/add_shopping_cart.svg" alt="">
+                        <span class="absolute top-0 right-0 bg-red-500 text-white px-1 rounded-full text-[9px]">7</span>
+                    </a>
+                    <div class="text-sm">Cart</div>
+                </div>
+
+                <!--  -->
+
+            </div>
+
+            <div class="size-9 block lg:hidden">
+                <a href="#"><img src="iconss/menu.svg" alt=""></a>
+            </div>
+
+        </div>
+    </nav>
+    <nav class="bg-gray-800 p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-center">
+            <a href="#" class="text-white mr-6">Home</a>
+            <a href="#" class="text-white mr-6">All Categories</a>
+            <a href="#" class="text-white mr-6">Flash Sale</a>
+            <a href="#" class="text-white">Track Order</a>
+        </div>
+    </nav>
+
+
+    <!-- category section -->
+    <section class="container relative mx-auto">
+
+        <h1 class="text-4xl mt-5">All Categories</h1>
+        <div class="container mx-auto mt-10 p-4 rounded-sm shadow-lg">
+            <h3 class="text-3xl">Women</h3>
+            <hr>
+            <div class="flex space-x-96 my-4">
+                <div>
+                    <ul class="text-lg space-y-2">
+
+                        <li><a href="">Tote Bag</a></li>
+                        <li><a href="">Crossbody Bag</a></li>
+                        <li> <a href="">Barrel Bag</a> </li>
+                        <li><a href="">Bucket Bag</a> </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="text-lg space-y-2">
+                        <li><a href="">Shoulder Bag</a></li>
+                        <li><a href="">Pouch</a></li>
+                        <li><a href="">Backpack</a></li>
+                        <li><a href="">Office Bag</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- wallet -->
+        <div class="container mx-auto mt-10 p-4 rounded-sm shadow-lg">
+            <h3 class="text-3xl">Wallet</h3>
+            <hr>
+            <div class="flex space-x-96 my-4">
+                <div>
+                    <ul class="text-lg space-y-2">
+                        <li><a href="">Bifold Wallet</a></li>
+                        <li><a href="">Trifold</a></li>
+                        <li> <a href="">Card Holder</a> </li>
+                        <li><a href="">Card Holder/ Wallet</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="text-lg space-y-2">
+                        <li><a href="">Long Wallet</a></li>
+                        <li><a href="">Multipurpose Wallet</a></li>
+                        <li><a href="">Mini Bifold</a></li>
+                        <li><a href="">Full Zip Wallet</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessories -->
+
+        <div class="container mx-auto mt-10 p-4 rounded-sm shadow-lg">
+            <h3 class="text-3xl">Accessories</h3>
+            <hr>
+            <div class="flex space-x-96 my-4">
+                <div>
+                    <ul class="text-lg space-y-2">
+
+                        <li><a href="">Key Ring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer class="bg-gray-200 mt-24 text-black py-8">
+        <div class="container mx-auto flex space-x-7 justify-between">
+            <div class="w-full md:w-1/2 lg:w-1/3 mb-4 md:mb-0">
+                <h3 class="text-xl font-bold mb-4">Elano</h3>
+                <p class="text-sm">A web-based retailer of genuine leather goods and fashion accessories, Elano offers
+                    online shopping options with an exceptional selection of both. We provide excellent leather products
+                    and a pleasant shopping experience. Experience excellent purchasing easily and with just one click.
+                </p>
+            </div>
+
+            <div class="w-full md:w-1/2 lg:w-1/3 mb-4 md:mb-0">
+                <h3 class="text-xl font-bold mb-4 border-b border-black">CONTACT INFO</h3>
+                <p class="text-sm">Address:<br>House 264 Avenue 3 Road 3 Mirpur D.O.H.S 1216 Mirpur, Dhaka Division,
+                    Bangladesh</p>
+                <p class="text-sm">Phone:<br>01878-104656</p>
+                <p class="text-sm">Email:<br>storeelano@gmail.com</p>
+            </div>
+
+            <div class="w-full md:w-1/2 lg:w-1/3">
+                <h3 class="text-xl font-bold mb-4 border-b border-black">COMPANY</h3>
+                <ul class="list-none">
+                    <li><a href="#" class="text-sm hover:text-gray-400">About us</a></li>
+                    <li><a href="#" class="text-sm hover:text-gray-400">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="w-full md:w-1/2 lg:w-1/3">
+                <h3 class="text-xl font-bold mb-4 border-b border-black">MY ACCOUNT</h3>
+                <ul class="list-none">
+                    <li><a href="#" class="text-sm hover:text-gray-400">Login</a></li>
+                    <li><a href="#" class="text-sm hover:text-gray-400">Order History</a></li>
+                    <li><a href="#" class="text-sm hover:text-gray-400">My Wishlist</a></li>
+                    <li><a href="#" class="text-sm hover:text-gray-400">Track Order</a></li>
+                </ul>
+            </div>
+            <!-- social media links -->
+
+        </div>
+        <div class="container mx-auto flex  justify-between w-full mt-4">
+            <p class="text-sm">&copy; 2024 Elano. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-sm hover:text-gray-400"><i class="fab fa-facebook fa-2x text-blue-700"></i></a>
+                <a href="#" class="text-sm hover:text-gray-400"><i class="fab fa-twitter fa-2x text-sky-500"></i></a>
+                <a href="#" class="text-sm hover:text-gray-400"><i
+                        class="fab fa-instagram fa-2x text-orange-500"></i></a>
+                <!-- Add more social media icons as needed -->
+            </div>
+        </div>
+
+    </footer>
+
+
+
+</body>
+
+</html>

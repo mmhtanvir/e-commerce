@@ -33,6 +33,10 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
+document.getElementById('cart-icon').addEventListener('click', function () {
+document.getElementById('cart-box').classList.toggle('hidden');
+});
+
 var buttons = document.querySelectorAll('.showPopupButton');
 
 // Loop through each button and add event listeners
@@ -70,7 +74,6 @@ for (var i = 0; i < popups.length; i++) {
   popups[i].classList.add('hidden');
 }
 }
-
 
 
 
