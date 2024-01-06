@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
         integrity="sha512-P5mCn/lfy2+JIX4ebVqGfi0/6syBF5IqEXYlrHBD/rRi8i/H/FfPU+D/EbGCQ7iLunbq8nlMGG6P9iGN5/6J4g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 
@@ -44,15 +44,15 @@
                     </a>
                     <div class="text-sm">White list</div>
                 </div>
-                
+
                 <div class="text-center relative">
                     <a class="flex justify-center" href="#">
                         <img class="size-9" src="iconss/add_shopping_cart.svg" alt="">
-                    <span class="absolute top-0 right-0 bg-red-500 text-white px-1 rounded-full text-[9px]">7</span>
+                        <span class="absolute top-0 right-0 bg-red-500 text-white px-1 rounded-full text-[9px]">7</span>
                     </a>
                     <div class="text-sm">Cart</div>
                 </div>
-                
+
                 <!--  -->
 
             </div>
@@ -106,7 +106,8 @@
                             <!-- Cart icon -->
                             <button
                                 class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
-                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                                <img src="iconss/add_shopping_cart.svg" data-popup-id="productPopup1" class="size-6 showPopupButton" id="cart"
+                                    alt="">
                             </button>
 
                             <!-- Favorite icon -->
@@ -117,6 +118,7 @@
                         </div>
                     </div>
 
+                    <!--  -->
 
                     <!-- Product Box 2 -->
                     <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
@@ -136,7 +138,7 @@
                             <!-- Cart icon -->
                             <button
                                 class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
-                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                                <img src="iconss/add_shopping_cart.svg" data-popup-id="productPopup2" class="size-6 showPopupButton" alt="">
                             </button>
 
                             <!-- Favorite icon -->
@@ -165,7 +167,7 @@
                             <!-- Cart icon -->
                             <button
                                 class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
-                                <img src="iconss/add_shopping_cart.svg" class="size-6" alt="">
+                                <img src="iconss/add_shopping_cart.svg"  class="size-6" alt="">
                             </button>
 
                             <!-- Favorite icon -->
@@ -409,7 +411,7 @@
                         </div>
                     </div>
 
-                    
+
 
                 </div>
                 <!-- Add Navigation -->
@@ -918,7 +920,7 @@
                         </div>
                     </div>
 
-                   
+
 
                 </div>
                 <!-- Add Navigation -->
@@ -1112,9 +1114,158 @@
 
 
     </section>
+
+
+
+    <!-- Popup -->
+    <div id="productPopup1" class="fixed inset-0 flex hidden justify-center items-center common bg-black bg-opacity-50  z-50">
+        <div class="flex flex-col p-4 space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4 lg:p-7 bg-white rounded-lg">
+
+            <!-- <div class="flex p-9 space-x-4"> -->
+
+            <!-- Your popup content goes here -->
+            <div class="flex space-x-3 lg:space-x-0 lg:space-y-1 lg:block">
+                <img src="img/bag1.png" class="w-24" alt="">
+                <img src="img/bag1.png" class="w-24" alt="">
+                <img src="img/bag1.png" class="w-24" alt="">
+                <img src="img/bag1.png" class="w-24" alt="">
+            </div>
+            <div>
+                <img src="img/bag1.png" class="w-56 lg:w-96" alt="">
+            </div>
+            <div class="space-y-1 lg:space-y-5">
+                <h3 class="text-xl font-bold">Classic Trifold Wallet Black</h3>
+                <!--  -->
+                <div class="flex items-center space-x-4">
+                    <div>Price:</div>
+                    <h3 class="text-3xl">900Tk <span class="text-sm">/Unit</span></h3>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="flex items-center space-x-4">
+                    <div>Quantity:</div>
+
+                    <button id="decrementBtn" class="text-2xl bg-gray-100 rounded-full px-[10px]"
+                        onclick="changeQuantity(-1)">-</button>
+                    <span id="quantity" class="text-xl">1</span>
+                    <button id="incrementBtn" class="text-2xl bg-gray-100 rounded-full px-[10px]"
+                        onclick="changeQuantity(1)">+</button>
+                    <span class="text-sm">(24 available)</span>
+
+                </div>
+                <hr>
+                <!--  -->
+                <div class="flex items-center space-x-4">
+                    <div>Total Price:</div>
+                    <div id="totalPrice" class="text-2xl">900tk</div>
+                </div>
+                <!--  -->
+                <button class="bg-gray-800 hover:bg-gray-600 text-white py-2.5 px-3 rounded flex items-center">
+                    <img src="iconss/add_shopping_cart copy_white.svg" class="size-5" alt="">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Close button -->
+            <button class="self-start" id="hidePopupButton1" onclick="hidePopup()">
+                <img src="iconss/cancel.svg"  class="size-7" alt="">
+            </button>
+
+            <!-- </div> -->
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="productPopup2" class="fixed inset-0 flex hidden justify-center items-center common bg-black bg-opacity-50  z-50">
+        <div class="flex flex-col p-4 space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4 lg:p-7 bg-white rounded-lg">
+
+            <!-- <div class="flex p-9 space-x-4"> -->
+
+            <!-- Your popup content goes here -->
+            <div class="flex space-x-3 lg:space-x-0 lg:space-y-1 lg:block">
+                <img src="img/bag1.png" class="w-24" alt="">
+                <img src="img/bag1.png" class="w-24" alt="">
+                <img src="img/bag1.png" class="w-24" alt="">
+                <img src="img/bag1.png" class="w-24" alt="">
+            </div>
+            <div>
+                <img src="img/bag1.png" class="w-56 lg:w-96" alt="">
+            </div>
+            <div class="space-y-1 lg:space-y-5">
+                <h3 class="text-xl font-bold">Classic Trifold Wallet Black</h3>
+                <!--  -->
+                <div class="flex items-center space-x-4">
+                    <div>Price:</div>
+                    <h3 class="text-3xl">800Tk <span class="text-sm">/Unit</span></h3>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="flex items-center space-x-4">
+                    <div>Quantity:</div>
+
+                    <button id="decrementBtn" class="text-2xl bg-gray-100 rounded-full px-[10px]"
+                        onclick="changeQuantity(-1)">-</button>
+                    <span id="quantity" class="text-xl">1</span>
+                    <button id="incrementBtn" class="text-2xl bg-gray-100 rounded-full px-[10px]"
+                        onclick="changeQuantity(1)">+</button>
+                    <span class="text-sm">(24 available)</span>
+
+                </div>
+                <hr>
+                <!--  -->
+                <div class="flex items-center space-x-4">
+                    <div>Total Price:</div>
+                    <div id="totalPrice" class="text-2xl">800tk</div>
+                </div>
+                <!--  -->
+                <button class="bg-gray-800 hover:bg-gray-600 text-white py-2.5 px-3 rounded flex items-center">
+                    <img src="iconss/add_shopping_cart copy_white.svg" class="size-5" alt="">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Close button -->
+            <button class="self-start" onclick="hidePopup()">
+                <img src="iconss/cancel.svg" class="size-7" alt="">
+            </button>
+
+            <!-- </div> -->
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
+
+
 
 
 

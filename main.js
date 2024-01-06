@@ -73,38 +73,6 @@ for (var i = 0; i < popups.length; i++) {
 
 
 
-// JavaScript for changing quantity
-function changeQuantity(amount) {
-var quantityElement = document.getElementById("quantity");
-var totalPriceElement = document.getElementById("totalPrice");
-
-// Get the current quantity value
-var currentQuantity = parseInt(quantityElement.innerText);
-
-// Update the quantity based on the amount (1 for increment, -1 for decrement)
-var newQuantity = currentQuantity + amount;
-
-// Ensure the new quantity is within bounds (you can adjust this based on your requirements)
-if (newQuantity < 1) {
-    newQuantity = 1;
-} else if (newQuantity > 24) {
-    newQuantity = 24;
-}
-
-// Update the quantity element with the new value
-quantityElement.innerText = newQuantity;
-
-// Get the unit price from the DOM (assuming it's in the same structure)
-var unitPriceElement = document.querySelector(".flex.items-center.space-x-4 h3.text-3xl");
-var unitPrice = parseInt(unitPriceElement.innerText);
-
-// Calculate the new total price based on the unit price and quantity
-var newTotalPrice = unitPrice * newQuantity;
-
-// Update the total price element with the new value
-totalPriceElement.innerText = newTotalPrice + "tk";
-}
-
 
 
 // const swiper = new Swiper('.swiper-container', {
