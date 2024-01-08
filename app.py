@@ -51,18 +51,18 @@ def item():
         price = request.form['price']
         available_quantity = request.form['available_quantity']
         description = request.form['description']
-        x = str(uuid.uuid4())
-        y = str(uuid.uuid4())
+        img = str(uuid.uuid4())
+        img1 = str(uuid.uuid4())
         m_image = request.files['m_image']
-        m_image.save('static/images/' + x + '.jpg')
-        m_image_filename = 'images/' + x + '.jpg'
+        m_image.save('static/images/' + img + '.jpg')
+        m_image_filename = 'images/' + img + '.jpg'
         xtra_image = request.files['xtra_image']
-        xtra_image.save('static/images/' + y + '.jpg')
-        xtra_image_filename = 'images/' + y + '.jpg'
+        xtra_image.save('static/images/' + img1 + '.jpg')
+        xtra_image_filename = 'images/' + img1 + '.jpg'
 
         
-        print(x)
-        print(y)
+        print(img)
+        print(img1)
 
         try:
             cur.execute("INSERT INTO items (product_name, price, available_quantity, description, m_image, xtra_image) VALUES (%s, %s, %s, %s, %s, %s)",
