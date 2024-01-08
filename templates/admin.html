@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Admin Panel</title>
+</head>
+
+<body class="bg-gray-200 p-4">
+
+  <!-- Example: First Add Item Button -->
+  <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <button class="bg-blue-500 text-white px-4 py-2 mb-4 rounded-md add-item-button">Add Item</button>
+<form class="hidden add-item-form" method="POST" action="{{url_for('item')}}" enctype="multipart/form-data">
+      <!-- ... (same form structure as before) -->
+      <!-- File Input for Product Pictures -->
+      <label class="block mb-2 text-gray-600">Product Pictures (up to 5)</label>
+      <input type="file" name="xtra_image" multiple class="mb-4">
+
+      <!-- Main Product Picture -->
+      <label class="block mb-2 text-gray-600">Main Product Picture</label>
+      <input type="file" name="m_image" class="mb-4">
+
+      <!-- Product Name -->
+      <label class="block mb-2 text-gray-600">Product Name</label>
+      <input type="text" name="product_name" class="w-full border p-2 mb-4">
+
+      <!-- Product Price -->
+      <label class="block mb-2 text-gray-600">Product Price</label>
+      <input type="number" name="price" class="w-full border p-2 mb-4">
+
+      <!-- Available Quantity -->
+      <label class="block mb-2 text-gray-600">Available Quantity</label>
+      <input type="number" name="available_quantity" class="w-full border p-2 mb-4">
+
+      <!-- Short Description -->
+      <label class="block mb-2 text-gray-600">Short Description</label>
+      <textarea name="description" class="w-full border p-2 mb-4"></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
+    </form>
+  </div>
+
+  <!-- flash sale -->
+  <div class="max-w-md mx-auto bg-white p-6 mt-6 rounded-md shadow-md">
+    <button class="bg-blue-500 text-white px-4 py-2 mb-4 rounded-md add-item-button">Flash Sale</button>
+    <form class="hidden add-item-form" method="POST" action="/sale" enctype="multipart/form-data">
+
+
+      <!-- Main Product Picture -->
+      <label class="block mb-2 text-gray-600">Main Product Picture</label>
+      <input type="file" name="yyy" class="mb-4">
+
+      <!-- Product Name -->
+      <label class="block mb-2 text-gray-600">Caption</label>
+      <input type="text" name="xxx" class="w-full border p-2 mb-4">
+
+      <!-- Submit Button -->
+      <button type="submit" name="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
+    </form>
+  </div>
+
+  <!-- best sellings -->
+  <div class="max-w-md mx-auto bg-white p-6 mt-6 rounded-md shadow-md">
+    <button class="bg-blue-500 text-white px-4 py-2 mb-4 rounded-md add-item-button">Best Selling Page</button>
+    <form class="hidden add-item-form" method="POST" action="/sell" enctype="multipart/form-data">
+
+
+
+      <!-- Data Selection Dropdown -->
+      <label class="block mb-2 text-gray-600">Select Data:</label>
+      <select class="w-full border p-2 mb-4">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+
+      <!-- Button -->
+      <button class="bg-purple-500 text-white px-4 py-2 rounded-md">ADD +</button>
+
+
+    </form>
+  </div>
+
+  <script>
+    // JavaScript to toggle the visibility of the corresponding form when a button is clicked
+    const addButtonList = document.querySelectorAll('.add-item-button');
+
+    addButtonList.forEach((addButton, index) => {
+      const form = document.querySelectorAll('.add-item-form')[index];
+
+      addButton.addEventListener('click', () => {
+        form.classList.toggle('hidden');
+      });
+    });
+  </script>
+</body>
+
+</html>
