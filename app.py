@@ -37,10 +37,10 @@ def index():
 def cart():
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM cart")
-    data = cur.fetchall()
+    item = cur.fetchall()
     cur.close()
 
-    return redirect(url_for('index'))
+    return redirect(url_for('index', item = item))
 
 @app.route("/item", methods=['GET', 'POST'])
 def item():

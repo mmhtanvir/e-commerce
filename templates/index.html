@@ -76,6 +76,7 @@
                 <div class="text-center relative">
                     <a class="flex justify-center" href="#" id="cart-icon">
                         <img class="size-9" src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}"  alt="">
+                {% for item in items %}
                         <span id="cart-badge"
                             class="absolute top-0 right-0 bg-red-500 text-white px-1 rounded-full text-[9px]">{{ cart_noti }}</span>
                     </a>
@@ -85,10 +86,10 @@
                         <p class="text-left">Your Cart:</p>
                         <div class="flex justify-between items-center border-b mt-2">
                             <div class="flex space-x-7"> 
-                                 <div><img src="{{ url_for('static', filename='img/bag1.png') }}" class="w-14" alt=""></div>
+                                 <div><img src="{{ url_for('static', filename=item.m_image) }}" class="w-14" alt=""></div>
                             <div class="text-left">
-                                <p>Trifold Wallet Black</p>
-                                <p><span id="cart_quantity" class="text-sm text-gray-400">1x</span><span id="cart_total">900</span></p>
+                                <p>{{item.product_name}}</p>
+                                <p><span id="cart_quantity" class="text-sm text-gray-400">{{item.available_quantity}}x</span><span id="cart_total">{{item.price}}</span></p>
 
                             </div>
                         </div>
@@ -101,6 +102,7 @@
                         </div>
                         <!-- Add your cart item details dynamically here -->
                     </div>
+                {% endfor %}
                     <div class="text-sm">Cart</div>
                 </div>
 
@@ -159,7 +161,7 @@
                                 <!-- Cart icon -->
                                 <button
                                     class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
-                                    <img src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}" data-popup-id="productPopup"
+                                    <img src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}" data-popup-id="productPopup{{ item.id }}"
                                         class="size-6 showPopupButton" id="cart" alt="">
                                 </button>
 
@@ -512,12 +514,10 @@
 
     <!-- Popup -->
     {% for item in items %}
-    <div id="productPopup"
-        class="fixed inset-0 flex hidden justify-center items-center common bg-black bg-opacity-50  z-50">
+    <div id="productPopup{{ item.id }}"
+        class="fixed inset-0 flex hidden justify-center items-center common bg-black bg-opacity-50 z-50">
         <div class="flex flex-col p-4 space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4 lg:p-7 bg-white rounded-lg">
-
-            <!-- <div class="flex p-9 space-x-4"> -->
-
+    
             <!-- Your popup content goes here -->
             <div class="flex space-x-3 lg:space-x-0 lg:space-y-1 lg:block">
                 <img src="{{ url_for('static', filename=item.m_image) }}" class="w-24" alt="">
@@ -530,52 +530,49 @@
             </div>
             <div class="space-y-1 lg:space-y-5">
                 <h3 class="text-xl font-bold">{{item.product_name}}</h3>
-                <!--  -->
                 <div class="flex items-center space-x-4">
                     <div>Price:</div>
-                    <h3 class="text-3xl">{{item.price}} <span class="text-sm">/Unit</span></h3>
+                    <h3 id="unitPrice" class="text-3xl">{{item.price}}</h3>
+                    <span class="text-sm">/Unit</span>
                 </div>
                 <hr>
-                <!--  -->
                 <div class="flex items-center space-x-4">
                     <div>Quantity:</div>
-                
-                    <button id="decrementBtn" class="text-2xl bg-gray-100 rounded-full px-[10px]" onclick="changeQuantity(-1)">-</button>
-                    <span id="quantity" class="text-xl">1</span>
-                    <button id="incrementBtn" class="text-2xl bg-gray-100 rounded-full px-[10px]" onclick="changeQuantity(1)">+</button>
-                    <span class="text-sm">{{item.quantity}}</span>
-                </div>
+                    <button id="decrementBtn{{ item.id }}" class="text-2xl bg-gray-100 rounded-full px-[10px]" onclick="changeQuantity('{{ item.id }}', -1)">-</button>
+                    <span id="quantity{{ item.id }}" class="text-xl">1</span>
+                    <button id="incrementBtn{{ item.id }}" class="text-2xl bg-gray-100 rounded-full px-[10px]" onclick="changeQuantity('{{ item.id }}', 1)">+</button>
+                    <span class="text-sm" id="availableQuantity{{ item.id }}">{{ item.available_quantity }}</span>
+                </div>               
                 <hr>
-                <!--  -->
                 <div class="flex items-center space-x-4">
                     <div>Total Price:</div>
-                    <div id="totalPrice" class="text-2xl">{{item.price}}</div>
-                    <p class="text-gray-600 mb-2">{{item.price}}</p>
-                </div>
-                <!--  -->
+                    <h3 id="unitPrice{{ item.id }}" class="text-3xl">{{ item.price }}</h3>
+                </div>                              
                 <div class="flex space-x-5">
-                    <button
-                        class="bg-gray-800 max-w-32 hover:bg-gray-600 text-white py-2.5 px-3 rounded flex items-center">
-                        <img src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}"class="size-5" alt="">
-                          Add to Cart
-                    </button>
+                    <form action="{{url_for('cart')}}" method="POST">
+                        <button
+                            class="bg-gray-800 max-w-32 hover:bg-gray-600 text-white py-2.5 px-3 rounded flex items-center">
+                            <img src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}" class="size-5"
+                                alt="">
+                            Add to Cart
+                        </button>
+                    </form>
                     <button
                         class="bg-gray-800 w-32 justify-center hover:bg-gray-600 text-white py-2.5 px-3 rounded flex items-center">
                         Buy
                     </button>
                 </div>
             </div>
-
+    
             <!-- Close button -->
-            <button class="self-start" id="hidePopupButton1" onclick="hidePopup()">
+            <button class="self-start" id="hidePopupButton1" onclick="hidePopup('{{item.id}}')">
                 <img src="{{ url_for('static', filename='iconss/cancel.svg') }}" class="size-7" alt="">
             </button>
-
-            <!-- </div> -->
-
         </div>
     </div>
     {% endfor %}
+
+    
 
 
 
@@ -662,3 +659,23 @@
 </body>
 
 </html>
+
+
+{% for item in items %}
+<script>
+    function changeQuantity(itemId, change) {
+        var quantityElement = document.getElementById('quantity' + itemId);
+        var totalPriceElement = document.getElementById('totalPrice' + itemId);
+        var unitPrice = parseFloat(document.getElementById('unitPrice' + itemId).innerText);
+        var currentQuantity = parseInt(quantityElement.innerText);
+        var availableQuantity = parseInt(document.getElementById('availableQuantity' + itemId).innerText);
+        var newQuantity = currentQuantity + change;
+
+        if (newQuantity > 0 && newQuantity <= availableQuantity) {
+            quantityElement.innerText = newQuantity;
+            var totalPrice = unitPrice * newQuantity;
+            totalPriceElement.innerText = totalPrice.toFixed(2);
+        }
+    }
+</script>
+{% endfor %}

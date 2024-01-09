@@ -101,26 +101,3 @@ for (var i = 0; i < popups.length; i++) {
 //       }
 //     }
 //   })
-function changeQuantity(popupId, change) {
-  // Get the quantity, price, and total price elements
-  var quantityElement = document.getElementById(popupId + '-quantity');
-  var priceElement = document.getElementById(popupId + '-price');
-  var totalPriceElement = document.getElementById(popupId + '-totalPrice');
-
-  // Get the current quantity value
-  var currentQuantity = parseInt(quantityElement.innerText);
-
-  // Update the quantity
-  var newQuantity = currentQuantity + change;
-  if (newQuantity < 1) {
-    newQuantity = 1; // Ensure quantity is not less than 1
-  }
-  quantityElement.innerText = newQuantity;
-
-  // Get the price per unit and calculate the new total price
-  var pricePerUnit = parseFloat(priceElement.innerText);
-  var newTotalPrice = newQuantity * pricePerUnit;
-
-  // Update the total price
-  totalPriceElement.innerText = newTotalPrice.toFixed(2); // Assuming you want two decimal places
-}
