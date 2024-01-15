@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      integrity="sha512-P5mCn/lfy2+JIX4ebVqGfi0/6syBF5IqEXYlrHBD/rRi8i/H/FfPU+D/EbGCQ7iLunbq8nlMGG6P9iGN5/6J4g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Admin Panel</title>
 </head>
 
@@ -13,7 +23,7 @@
   <!-- Example: First Add Item Button -->
   <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
     <button class="bg-blue-500 text-white px-4 py-2 mb-4 rounded-md add-item-button">Add Item</button>
-<form class="hidden add-item-form" method="POST" action="{{url_for('item')}}" enctype="multipart/form-data">
+    <form class="hidden add-item-form" method="POST" action="{{url_for('item')}}" enctype="multipart/form-data">
       <!-- ... (same form structure as before) -->
       <!-- File Input for Product Pictures -->
       <label class="block mb-2 text-gray-600">Product Pictures (up to 5)</label>
@@ -85,6 +95,65 @@
     </form>
   </div>
 
+    <!-- items in db -->
+  <div class="max-w-screen-md mx-auto bg-white p-6 mt-6 rounded-md shadow-md">
+    <button class="bg-blue-500 text-white px-4 py-2 mb-4 rounded-md add-item-button">Stock</button>
+    <div class="hidden add-item-form">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold">Stock</h2>
+    
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        <div class="max-w-4xl mx-auto bg-white p-6 rounded-md shadow-md mt-6">
+          <h2 class="text-2xl font-bold mb-4">Sample Table</h2>
+        
+          <table class="min-w-full border border-gray-300">
+              <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b text-left">Name</th>
+                    <th class="py-2 px-4 border-b text-left">Price</th>
+                    <th class="py-2 px-4 border-b text-left">Quantity</th>
+                    <th class="py-2 px-4 border-b text-left">Stock Status</th>
+                    <th class="py-2 px-4 border-b text-left">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                    {% for item in items %}
+                  <tr>
+                        <td class="py-2 px-4 border-b text-left">{{item.product_name}}</td>
+                        <td class="py-2 px-4 border-b text-left">{{item.price}}</td>
+                        <td class="py-2 px-4 border-b text-left">{{item.available_quantity}}</td>
+                        <td class="py-2 px-4 border-b text-left"><b>{{item.stock_status}}</b></td>
+                      <td class="py-2 px-4 border-b text-left" style="display: flex;">
+                        <form action="/edit/{{item.id}}" method="POST" style="margin-right: 10px;">
+                          <input type="hidden" name="id" value="{{item.id}}">
+                          <button type="submit" class="bg-yellow-500 text-white py-1 px-2 rounded-sm">Edit</button>
+                        </form>             
+                        <form action="/delete/{{item.id}}" method="POST" onsubmit="return confirm('Are You Sure to Delete This Data')">
+                          <button type="submit" class="bg-red-500 text-white py-1 px-2 rounded-sm">Delete</button>
+                        </form>                    
+                      </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+</div>
+
   <script>
     // JavaScript to toggle the visibility of the corresponding form when a button is clicked
     const addButtonList = document.querySelectorAll('.add-item-button');
@@ -100,3 +169,6 @@
 </body>
 
 </html>
+
+
+

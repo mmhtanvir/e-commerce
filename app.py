@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, redirect, request, session
+from flask import Flask, url_for, render_template, redirect, request, session, flash
 import uuid
 from flask_mysqldb import MySQL
 import mysql.connector
@@ -35,12 +35,28 @@ def index():
 
 @app.route("/cart")
 def cart():
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM cart")
-    item = cur.fetchall()
-    cur.close()
+    if request.method == "POST":
+        item_id = request.form.get('item_id')
+        available_quantity = int(request.form.get('available_quantity'))
+        price = request.form.get('price')
+        m_image = request.form.get('m_image')
 
-    return redirect(url_for('index', item = item))
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM items WHERE item_id = %s available_quantity = %s price = %s m_image = %s", (item_id, available_quantity, price, m_image, ))
+        existing_item = cur.fetchone()
+
+        if existing_item:
+            cur.close()
+            return render_template('index.html')
+        else:
+            # Insert new user data into the database
+            sql = "INSERT INTO users (item_id, available_quantity, price, m_image) VALUES(%s, %s, %s, %s)"
+            data = (item_id, available_quantity, price, m_image)
+            cur.execute(sql, data)
+            cur.close()
+            mysql.connection.commit()
+
+        return redirect(url_for('index'))
 
 @app.route("/item", methods=['GET', 'POST'])
 def item():
@@ -79,16 +95,10 @@ def item():
     return redirect(url_for('admin'))
 
 
+
 @app.route("/favorite")
 def favorite():
         return redirect(url_for('index'))
-
-@app.route('/delete/<string:id>', methods = ['GET', 'POST'])
-def delete(id):
-    cur = mysql.connection.cursor()
-    cur.execute("DELETE FROM cart WHERE id = %s", [id])
-    mysql.connection.commit()
-    return redirect(url_for('index'))
 
 @app.route("/category")
 def category():
@@ -96,9 +106,46 @@ def category():
 
 @app.route("/feelona-admin")
 def admin():
-    item = session.get('item', None)
+    items = session.get('item', None)
 
-    return render_template('admin.html', item=item)
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM items")
+    items = cur.fetchall()
+    cur.close()
+
+    return render_template('admin.html', items = items) 
+
+@app.route('/edit/<string:id>', methods=['GET', 'POST'])
+def edit(id):
+    items = {'key': 'value'}
+
+    if request.method == "POST":
+        id = request.form['id']
+        print(request.form)  # Print the entire form data to the console
+        product_name = request.form['product_name']
+        print(f"Product Name: {product_name}")  # Print the value of 'product_name' to the console
+        price = request.form['price']
+        available_quantity = request.form['available_quantity']
+        stock_condition = request.form['stock_condition']
+
+        # Corrected SQL syntax
+        sql = f"UPDATE items SET product_name = '{product_name}', price = '{price}', available_quantity = '{available_quantity}', stock_condition = '{stock_condition}' WHERE id = {id}"
+        
+        cur = mysql.connection.cursor()
+        cur.execute(sql)
+        mysql.connection.commit()
+
+    return render_template('edit.html', items=items)
+
+
+# Delete route
+@app.route('/delete/<string:id>', methods=['POST'])
+def delete(id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM items WHERE id = %s", (id,))
+    mysql.connection.commit()
+    return redirect(url_for('admin'))
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

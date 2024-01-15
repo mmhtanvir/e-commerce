@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/dist/output.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <!-- Tailwind CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            integrity="sha512-P5mCn/lfy2+JIX4ebVqGfi0/6syBF5IqEXYlrHBD/rRi8i/H/FfPU+D/EbGCQ7iLunbq8nlMGG6P9iGN5/6J4g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>feelona</title>
+    </head>
+<body class="font-myfont">
+    <div class="py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white font-bold text-lg">Your Logo</div>
+
+            <div class="flex space-x-4 items-center">
+                <a href="/signup">
+                    <button class="font-bold py-2 px-4">
+                        Sign Up
+                    </button>
+                </a>
+                <a href="/login">
+                    <button class="font-bold py-2 px-4">
+                        Login
+                    </button>
+                </a>
+                <a href="/logout">
+                    <button class="font-bold py-2 px-4">
+                        Logout
+                    </button>
+                </a>
+                <div class="text-white">
+                    <img src="{{ url_for('static', filename='iconss/user.svg') }}"  class="size-6" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="container mx-auto p-6">
+        <div class="flex justify-between">
+            <!--  -->
+            <div class="py-2">
+                <img src="{{ url_for('static', filename='iconss/logo.svg') }}" alt="">
+            </div>
+            <!--  -->
+            <div class="lg:flex space-x-8 hidden">
+
+                <div class="flex items-center">
+                    <input type="text" placeholder="Search..."
+                        class="border w-96 p-2 rounded-l focus:outline-none focus:border-blue-500">
+                    <button class="bg-blue-500 text-white p-2.5 rounded-r">Search</button>
+                </div>
+
+
+
+                <!--  -->
+
+                <div class="text-center relative">
+                    <a class="flex justify-center" href="#">
+                        <img class="size-9" src="{{ url_for('static', filename='iconss/favorite.svg') }}" alt="">
+                        <span class="absolute top-0 right-0 bg-red-500 text-white px-1 rounded-full text-[9px]">7</span>
+                    </a>
+                    <div class="text-sm">Wishlist</div>
+                </div>
+                <!--  -->
+                <div class="text-center relative">
+                    <a class="flex justify-center" href="/cart" id="cart-icon">
+                        <img class="size-9" src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}"  alt="">
+                {% for item in items %}
+                        <span id="cart-badge"
+                            class="absolute top-0 right-0 bg-red-500 text-white px-1 rounded-full text-[9px]">{{ cart_noti }}</span>
+                    </a>
+                    <div id="cart-box"
+                        class="hidden absolute w-96 h-96 top-12 right-0 bg-white border border-gray-300 p-4 rounded shadow-md z-50">
+                        <!-- Your cart items go here -->
+                        <p class="text-left">Your Cart:</p>
+                        <div class="flex justify-between items-center border-b mt-2">
+                            <div class="flex space-x-7"> 
+                                 <div><img src="{{ url_for('static', filename=item.m_image) }}" class="w-14" alt=""></div>
+                            <div class="text-left">
+                                <p>{{item.product_name}}</p>
+                                <p><span id="cart_quantity" class="text-sm text-gray-400">{{item.available_quantity}}x</span><span id="cart_total">{{item.price}}</span></p>
+
+                            </div>
+                        </div>
+                          
+                        <button>
+                            <a href="/delete">
+                                <img src="{{ url_for('static', filename='iconss/trash.svg') }}" class="w-5" alt="">
+                            </a>
+                        </button>
+                        </div>
+                        <!-- Add your cart item details dynamically here -->
+                    </div>
+                {% endfor %}
+                    <div class="text-sm">Cart</div>
+                </div>
+
+
+                <!--  -->
+
+            </div>
+
+            <div class="size-9 block lg:hidden">
+                <a href="#"><img src="{{ url_for('static', filename='iconss/menu.svg') }}" alt=""></a>
+            </div>
+
+        </div>
+    </nav>
+    <nav class="bg-gray-800 p-4 sticky top-0 z-40">
+        <div class="container mx-auto flex items-center justify-center">
+            <a href="#" class="text-white mr-6">Home</a>
+            <a href="#" class="text-white mr-6">All Categories</a>
+            <a href="#" class="text-white mr-6">Flash Sale</a>
+            <a href="#" class="text-white">Track Order</a>
+        </div>
+    </nav>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">Your Cart</h1>
+        {% if cart_items %}
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr>
+                <th class="py-3 px-6 text-left">Product Name</th>
+                <th class="py-3 px-6 text-left">Price</th>
+                <th class="py-3 px-6 text-left">Quantity</th>
+                <th class="py-3 px-6 text-left">Total</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {% for item in cart_items %}
+                <tr>
+                  <td class="py-4 px-6">{{ item.product_name }}</td>
+                  <td class="py-4 px-6">{{ item.price }}</td>
+                  <td class="py-4 px-6">{{ item.quantity }}</td>
+                  <td class="py-4 px-6">{{ item.price * item.quantity }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p class="mt-4">Your cart is empty.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

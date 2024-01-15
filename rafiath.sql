@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 08, 2024 at 02:38 PM
+-- Generation Time: Jan 15, 2024 at 06:49 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -50,10 +50,10 @@ INSERT INTO `admin` (`id`, `name`, `email`, `password`, `user_id`) VALUES
 
 CREATE TABLE `cart` (
   `id` int NOT NULL,
-  `item_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `item_price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `quantity` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `image` longblob
+  `user_id` int NOT NULL,
+  `item_id` int NOT NULL,
+  `quantity` int NOT NULL,
+  `m_image` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -67,6 +67,7 @@ CREATE TABLE `items` (
   `product_name` varchar(255) DEFAULT NULL,
   `price` varchar(255) DEFAULT NULL,
   `available_quantity` varchar(255) DEFAULT NULL,
+  `stock_status` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `m_image` text,
   `xtra_image` text
@@ -76,8 +77,8 @@ CREATE TABLE `items` (
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`id`, `product_name`, `price`, `available_quantity`, `description`, `m_image`, `xtra_image`) VALUES
-(32, 'moneybag', '213221', '2323', '2eewwsacsxc', 'images/8987a835-8385-4b52-a4ae-2e1f9d91ae1f.jpg', 'images/09475897-6403-4f83-a5c8-f523575a3e9d.jpg');
+INSERT INTO `items` (`id`, `product_name`, `price`, `available_quantity`, `stock_status`, `description`, `m_image`, `xtra_image`) VALUES
+(45, 'moneybag', '121', '121', 'In Stock', ' vbv v ', 'images/d938cbd3-c970-42a8-b6b9-8d71b138f145.jpg', 'images/be993b6d-e714-4ae7-be95-7461bd3e5348.jpg');
 
 -- --------------------------------------------------------
 
@@ -97,8 +98,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(2, 'Mahmudul Hasan Tanvir', 'mmhtanvir1@gmail.com', 'asdfsa'),
-(3, 'Mahmudul Hasan Tanvir', 'mmhtanvir1@gmail.com', 'ffgfg');
+(2, 'Mahmudul Hasan Tanvir', 'mmhtanvir1@gmail.com', 'asdfsa');
 
 --
 -- Indexes for dumped tables
@@ -114,7 +114,9 @@ ALTER TABLE `admin`
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `item_id` (`item_id`);
 
 --
 -- Indexes for table `items`
@@ -148,13 +150,24 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

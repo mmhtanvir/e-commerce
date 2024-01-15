@@ -152,6 +152,7 @@
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold mb-2">{{item.product_name}}</h3>
                                 <p class="text-gray-600 mb-2">{{item.price}}</p>
+                                <p class="text-gray-900 mb-2"><b>{{item.stock_status}}</b></p>
                                 <p class="text-gray-500">{{item.description}}</p>
                             </div>
 
@@ -549,14 +550,14 @@
                     <h3 id="unitPrice{{ item.id }}" class="text-3xl">{{ item.price }}</h3>
                 </div>                              
                 <div class="flex space-x-5">
-                    <form action="{{url_for('cart')}}" method="POST">
                         <button
                             class="bg-gray-800 max-w-32 hover:bg-gray-600 text-white py-2.5 px-3 rounded flex items-center">
+                            <a href="/cart/{{item.id}}">
                             <img src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}" class="size-5"
-                                alt="">
-                            Add to Cart
+                            alt="">
+                        Add to Cart
+                            </a>
                         </button>
-                    </form>
                     <button
                         class="bg-gray-800 w-32 justify-center hover:bg-gray-600 text-white py-2.5 px-3 rounded flex items-center">
                         Buy
@@ -663,7 +664,7 @@
 
 {% for item in items %}
 <script>
-    function changeQuantity(itemId, change) {
+    function changeQuantity(itemId, change, unitPrice, availableQuantity) {
         var quantityElement = document.getElementById('quantity' + itemId);
         var totalPriceElement = document.getElementById('totalPrice' + itemId);
         var unitPrice = parseFloat(document.getElementById('unitPrice' + itemId).innerText);
