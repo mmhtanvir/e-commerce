@@ -50,7 +50,7 @@ def cart():
             return render_template('index.html')
         else:
             # Insert new user data into the database
-            sql = "INSERT INTO users (item_id, available_quantity, price, m_image) VALUES(%s, %s, %s, %s)"
+            sql = "INSERT INTO cart (item_id, available_quantity, price, m_image) VALUES(%s, %s, %s, %s)"
             data = (item_id, available_quantity, price, m_image)
             cur.execute(sql, data)
             cur.close()
@@ -118,24 +118,22 @@ def admin():
 @app.route('/edit/<string:id>', methods=['GET', 'POST'])
 def edit(id):
     items = {'key': 'value'}
-
-    if request.method == "POST":
+    
+    if request.method == 'POST':
         id = request.form['id']
-        print(request.form)  # Print the entire form data to the console
         product_name = request.form['product_name']
-        print(f"Product Name: {product_name}")  # Print the value of 'product_name' to the console
         price = request.form['price']
         available_quantity = request.form['available_quantity']
-        stock_condition = request.form['stock_condition']
-
-        # Corrected SQL syntax
-        sql = f"UPDATE items SET product_name = '{product_name}', price = '{price}', available_quantity = '{available_quantity}', stock_condition = '{stock_condition}' WHERE id = {id}"
-        
+        sql = f"UPDATE items SET product_name = '{product_name}', price = '{price}', available_quantity = '{available_quantity}' WHERE id = {id}"
+        print(sql)
         cur = mysql.connection.cursor()
         cur.execute(sql)
         mysql.connection.commit()
 
-    return render_template('edit.html', items=items)
+    return render_template('edit.html', item=items)
+
+
+
 
 
 # Delete route

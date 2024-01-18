@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/dist/output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="static/favicon.jpg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -25,13 +26,13 @@
     <button class="bg-blue-500 text-white px-4 py-2 mb-4 rounded-md add-item-button">Add Item</button>
     <form class="hidden add-item-form" method="POST" action="{{url_for('item')}}" enctype="multipart/form-data">
       <!-- ... (same form structure as before) -->
-      <!-- File Input for Product Pictures -->
-      <label class="block mb-2 text-gray-600">Product Pictures (up to 5)</label>
-      <input type="file" name="xtra_image" multiple class="mb-4">
-
       <!-- Main Product Picture -->
       <label class="block mb-2 text-gray-600">Main Product Picture</label>
       <input type="file" name="m_image" class="mb-4">
+
+      <!-- File Input for Product Pictures -->
+      <label class="block mb-2 text-gray-600">Product Pictures</label>
+      <input type="file" name="xtra_image" multiple class="mb-4">
 
       <!-- Product Name -->
       <label class="block mb-2 text-gray-600">Product Name</label>
@@ -83,9 +84,9 @@
       <!-- Data Selection Dropdown -->
       <label class="block mb-2 text-gray-600">Select Data:</label>
       <select class="w-full border p-2 mb-4">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+        {% for item in items %}
+        <option value="option{{item.id}}">{{item.product_name}}</option>
+        {% endfor %}
       </select>
 
       <!-- Button -->
@@ -102,19 +103,6 @@
       <div class="container mx-auto">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">Stock</h2>
-    
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-success alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{message}}
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
         </div>
         <div class="max-w-4xl mx-auto bg-white p-6 rounded-md shadow-md mt-6">
           <h2 class="text-2xl font-bold mb-4">Sample Table</h2>
@@ -137,10 +125,7 @@
                         <td class="py-2 px-4 border-b text-left">{{item.available_quantity}}</td>
                         <td class="py-2 px-4 border-b text-left"><b>{{item.stock_status}}</b></td>
                       <td class="py-2 px-4 border-b text-left" style="display: flex;">
-                        <form action="/edit/{{item.id}}" method="POST" style="margin-right: 10px;">
-                          <input type="hidden" name="id" value="{{item.id}}">
-                          <button type="submit" class="bg-yellow-500 text-white py-1 px-2 rounded-sm">Edit</button>
-                        </form>             
+                        <a href="/edit/{{item.id}}" class="bg-yellow-500 text-white py-1 px-2 rounded-sm" style="margin-right: 10px;">Edit</a>
                         <form action="/delete/{{item.id}}" method="POST" onsubmit="return confirm('Are You Sure to Delete This Data')">
                           <button type="submit" class="bg-red-500 text-white py-1 px-2 rounded-sm">Delete</button>
                         </form>                    
@@ -169,6 +154,3 @@
 </body>
 
 </html>
-
-
-
