@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="static/favicon.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+          integrity="sha512-P5mCn/lfy2+JIX4ebVqGfi0/6syBF5IqEXYlrHBD/rRi8i/H/FfPU+D/EbGCQ7iLunbq8nlMGG6P9iGN5/6J4g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Review Page</title>
+</head>
+
+<body class="bg-gray-100 p-8">
+  {% for items in item %}
+    <div class="bg-white rounded-lg p-6 mb-8 shadow-md flex max-w-2xl mx-auto">
+          <img src="{{ url_for('static', filename=item.xtra_image) }}" class="w-60 h-60 rounded mt-5 mr-2" alt="">
+          <div class="mt-10 ml-5">
+              <h4 class="text-2xl"><b>{{ item.product_name }}</b></h4>
+              <h4 class="text-2xl mt-5">{{ item.price }}</h4>
+              <p class="mt-5">{{ item.description }}</p>
+          </div>
+    </div>
+    {% endfor %}
+
+{% for review in reviews %}
+<div class="bg-white rounded-lg p-6 mb-8 shadow-md flex max-w-2xl mx-auto">
+    <img src="{{ url_for('static', filename='iconss/id.svg') }}" class="w-12 h-12 rounded-full mr-4" alt="User Image">
+    <div>
+        <span class="text-xl font-semibold">{{ review.username }}</span>
+        <br>
+        <span class="ml-2 text-xl text-gray-900">{{ review.rating }}/5</span>
+        <br>
+        <p class="ml-2 text-xl text-gray-900 leading-relaxed">{{ review.comment }}</p>
+    </div>
+</div>
+{% endfor %}
+
+
+
+<div class="flex justify-center items-center mt-10">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96" action="/review/{{ item.id }}" method="post">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                Username:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   id="username" name="username" type="text" placeholder="Username" required>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="comment">
+                Comment:
+            </label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="comment" name="comment" rows="4" placeholder="Your comment (10-1000 characters)" minlength="10"
+                      maxlength="1000" required></textarea>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="rating">
+                Rating:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   id="rating" name="rating" type="number" min="1" max="5" placeholder="Rating" required>
+        </div>
+        <div class="flex items-center justify-between">
+            <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit">
+                Submit Review
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

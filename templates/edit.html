@@ -28,16 +28,15 @@
 
           <!-- Product Name -->
           <label class="block mb-2 text-i-600">Product Name</label>
-          <input type="text" value="{{item.product_name}}" name="product_name" class="w-full border p-2 mb-4">
+          <input type="text" value="{{item.product_name}}" name="product_name" class="w-full border p-2 mb-4" required = "1"> 
     
           <!-- Product Price -->
           <label class="block mb-2 text-gray-600">Product Price</label>
-          <input type="number" value="{{item.price}}" name="price" class="w-full border p-2 mb-4">
+          <input type="number" value="{{item.price}}" name="price" class="w-full border p-2 mb-4" required = "1">
     
           <!-- Available Quantity -->
           <label class="block mb-2 text-gray-600">Available Quantity</label>
-          <input type="number" value="{{item.available_quantity}}" name="available_quantity" class="w-full border p-2 mb-4">
-          "{{item.available_quantity}}"
+          <input type="number" value="{{item.available_quantity}}" name="available_quantity" class="w-full border p-2 mb-4" required = "1">
           <!-- Submit Button -->
           <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
         </form>

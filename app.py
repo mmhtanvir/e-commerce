@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, redirect, request, session, flash
+from flask import Flask, url_for, render_template, redirect, request, session, g
 import uuid
 from flask_mysqldb import MySQL
 import mysql.connector
@@ -16,6 +16,13 @@ app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'rafiath'  
 # get data with db column name instead of index
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
+
+db = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='rafiath'
+)
 
 mysql = MySQL(app)
 
@@ -82,7 +89,7 @@ def item():
 
         try:
             cur.execute("INSERT INTO items (product_name, price, available_quantity, description, m_image, xtra_image) VALUES (%s, %s, %s, %s, %s, %s)",
-                        (product_name, price, available_quantity, description, m_image_filename, xtra_image_filename),)
+                        (product_name, price,  available_quantity, description, m_image_filename, xtra_image_filename),)
             mysql.connection.commit()
         except Exception as e:
             print(f"Error: {e}")
@@ -102,9 +109,35 @@ def favorite():
 
 @app.route("/category")
 def category():
-        return render_template('category.html')
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM items")
+    items = cur.fetchall()
+    cur.close()
 
-@app.route("/feelona-admin")
+    return render_template('category.html', item = items)
+
+@app.route("/category/<string:category>")
+def categoryitem():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM items")
+    items = cur.fetchall()
+    cur.close()
+    
+    
+    cur = mysql.connection.cursor()
+
+    if category == "":
+        cur.execute("SELECT * FROM ")
+        items = cur.fetchall()
+    elif category == "":
+        cur.execute("SELECT * FROM ")
+        items = cur.fetchall()
+
+    cur.close()
+
+    return render_template('category-item.html', items = items)
+
+@app.route("/33214r")
 def admin():
     items = session.get('item', None)
 
@@ -113,11 +146,16 @@ def admin():
     items = cur.fetchall()
     cur.close()
 
-    return render_template('admin.html', items = items) 
+    if 'user_id' in session:
+        user_id = session['user_id']
+    else:
+        user_id = None  
+
+    return render_template('admin.html', items = items, user_id = user_id) 
 
 @app.route('/edit/<string:id>', methods=['GET', 'POST'])
 def edit(id):
-    items = {'key': 'value'}
+    items = session.get('item', None)
     
     if request.method == 'POST':
         id = request.form['id']
@@ -130,7 +168,43 @@ def edit(id):
         cur.execute(sql)
         mysql.connection.commit()
 
-    return render_template('edit.html', item=items)
+    return render_template('edit.html', items=items)
+
+from flask import Flask, render_template, request, session
+
+
+# ... (previous imports and configurations) ...
+
+@app.route('/review/<string:id>', methods=['GET', 'POST'])
+def review(id):
+    cur = mysql.connection.cursor()
+
+    if request.method == 'POST':
+        username = request.form['username']
+        comment = request.form['comment']
+        rating = request.form['rating']
+
+        try:
+            cur.execute("INSERT INTO reviews (id, username, comment, rating) VALUES (%s, %s, %s, %s)",
+                        (id, username, comment, rating))
+            mysql.connection.commit()
+        except Exception as e:
+            print(f"Error: {e}")
+            mysql.connection.rollback()
+
+    # Fetch id from the items table and name from the users table
+    cur.execute("SELECT * FROM items WHERE id = %s", (id,))
+    items = cur.fetchone()
+
+    # Fetch reviews for the specific item
+    reviews = cur.fetchall()
+
+    cur.close()
+
+    return render_template('review.html', item=items, reviews=reviews)
+
+# ... (previous routes) ...
+
 
 
 
@@ -147,7 +221,7 @@ def delete(id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if 'username' in session:
+    if 'email' in session:
         return redirect(url_for('index'))
     
     if request.method == 'POST':
@@ -189,6 +263,8 @@ def signup():
 
 @app.route('/fflog', methods=['GET', 'POST'])
 def flogin():
+    if 'username' in session:
+        return redirect(url_for('index'))
 
     if request.method == 'POST':
         user_id = request.form['user_id']
@@ -239,6 +315,11 @@ def fsignup():
 @app.route('/logout')
 def logout():
     session.pop('email', None)
+    return redirect(url_for('index'))
+
+@app.route('/signout')
+def signout():
+    session.pop('user_id', None)
     return redirect(url_for('index'))
 
 

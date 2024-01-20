@@ -16,10 +16,35 @@
       integrity="sha512-P5mCn/lfy2+JIX4ebVqGfi0/6syBF5IqEXYlrHBD/rRi8i/H/FfPU+D/EbGCQ7iLunbq8nlMGG6P9iGN5/6J4g=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Admin Panel</title>
+  <title>Feelona</title>
 </head>
 
-<body class="bg-gray-200 p-4">
+<body class="bg-gray-200 p-4 font-myfont">
+{% if user_id %}
+    <div class="py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-gray-200 font-bold text-lg">Your Logo</div>
+
+            <div class="flex space-x-4 items-center">
+                <a href="/ffid">
+                    <button class="font-bold py-2 px-4">
+                        Sign Up
+                    </button>
+                </a>
+                <a href="/fflog">
+                    <button class="font-bold py-2 px-4">
+                        Login
+                    </button>
+                </a>
+                
+                <a href="/signout">
+                  <button class="font-bold py-2 px-4">
+                      Logout
+                  </button>
+              </a>
+            </div>
+        </div>
+    </div>
 
   <!-- Example: First Add Item Button -->
   <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
@@ -37,6 +62,13 @@
       <!-- Product Name -->
       <label class="block mb-2 text-gray-600">Product Name</label>
       <input type="text" name="product_name" class="w-full border p-2 mb-4">
+
+      <!-- category -->
+      <label class="block mb-2 text-gray-600">Select Category:</label>
+      <select name="category" class="w-full border p-2 mb-4">
+        <option value="option1">none</option>
+        <option value="option2">nonww</option>
+      </select>
 
       <!-- Product Price -->
       <label class="block mb-2 text-gray-600">Product Price</label>
@@ -138,6 +170,9 @@
       </div>
   </div>
 </div>
+{% else %}
+<h1 class="text-black">404 Page not found</a></h1>
+{% endif %}
 
   <script>
     // JavaScript to toggle the visibility of the corresponding form when a button is clicked
