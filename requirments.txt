@@ -1,0 +1,4 @@
+flask
+uuid
+flask_mysqldb
+mysql.connector
