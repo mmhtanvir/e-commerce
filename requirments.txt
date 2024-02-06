@@ -1,4 +1,4 @@
 flask
+mysqlclient
+flask-mysqldb
 uuid
-flask_mysqldb
-mysql.connector
