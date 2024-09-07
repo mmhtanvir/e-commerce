@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section class="relative p-10">
+    <div class="container mx-auto  p-8 overflow-hidden rounded-md">
+        <div class="flex justify-between py-4">
+            <!--  -->
+            <h1 class="text-3xl font-bold">Best Selling</h1>
+            <div class="text-center">
+                <a href="/best-selling"
+                    class="bg-gray-800 text-white py-2 px-4 rounded-md inline-block hover:bg-gray-600 transition duration-">View
+                    All</a>
+            </div>
+
+        </div>
+        <!-- <div class=""> -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Product Box 1 -->
+                    {% for item in items %}
+                    <div class="swiper-slide relative bg-white rounded-lg shadow-md group">
+                        <!-- Product Image -->
+                        <img src="{{ url_for('static', filename=item.m_image) }}" alt="Product 1" class="w-full object-cover rounded-md">
+
+                        <!-- Product Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2">{{item.product_name}}</h3>
+                            <p class="text-gray-600 mb-2">{{item.price}}</p>
+                            <p class="text-gray-900 mb-2"><b>{{item.stock_status}}</b></p>
+                            <p class="text-gray-500">{{item.description}}</p>
+                        </div>
+
+                        <!-- Options that appear on hover -->
+                        <div
+                            class="opacity-0 group-hover:opacity-100 transition duration-300 absolute top-0 right-0 space-x-2 p-4">
+                            <!-- Cart icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110 opacity">
+                                <img src="{{ url_for('static', filename='iconss/add_shopping_cart.svg') }}" data-popup-id="productPopup{{ item.id }}"
+                                    class="size-6 showPopupButton" id="cart" alt="">
+                            </button>
+
+                            <!-- Favorite icon -->
+                            <button
+                                class="bg-white rounded-full p-1.5 transition-transform duration-300 ease-in-out transform hover:scale-110">
+                                <img src="{{ url_for('static', filename='iconss/favorite.svg') }}" class="size-6" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+            </div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+
+</section>
+
+{% endblock %}
